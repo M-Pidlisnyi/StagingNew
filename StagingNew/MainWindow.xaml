@@ -5,8 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StagingNew"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="StagingNew" Height="600" Width="800">
+    <Viewbox>
+        <Grid Name="LayoutGrid" Height="600" Width="800">
+            <Grid Name="Header" Height="25" Background="Black"
+                  VerticalAlignment="Top">
+                <TextBlock Name="HeaderText" Foreground="White"
+                           HorizontalAlignment="Center"
+                           FontFamily="Century Gothic" FontSize="20"
+                           Text="New version of staging calculating programm"/>
+            </Grid>
+            <Grid Name="LefGrid" HorizontalAlignment="Left"
+                  Width="400" Margin="0,30,0,0">
+                <StackPanel>
+                    <TextBox Width="250" Height="40" Name="WallHeightInput"
+                             HorizontalAlignment="Left"
+                             Background="LightGray"
+                             FontFamily="Century Gothic" FontSize="25" 
+                             Text="Height of the wall"
+                             GotFocus="StartInput"
+                             LostFocus="ReWriteTooltip"/>
+                    <Line Height="5"/>
+                    <TextBox Width="250" Height="40" Name="WallWidthInput"
+                             HorizontalAlignment="Left"
+                             Background="LightGray"
+                             FontFamily="Century Gothic" FontSize="25" 
+                             Text="Width of the wall"
+                             GotFocus="StartInput"
+                             LostFocus="ReWriteTooltip"/>
+                </StackPanel>
+            </Grid>
+            <Grid Name="RightGrid" HorizontalAlignment="Right"
+                  Width="400" Margin="0,30,0,0">
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock FontSize="20" Text="Стойки"/>
+                    <TextBlock Height="40" Width="200" Name="StandsOuptut"
+                               Background="LightGray"/>
+                    <TextBlock FontSize="20" Text="Поперечки"/>
+                    <TextBlock Height="40" Width="200" Name="AlongsOuptut"
+                               Background="LightGray"/>
+                    <TextBlock FontSize="20" Text="Короткі Стойки"/>
+                    <TextBlock Height="40" Width="200" Name="ShortStandsOuptut"
+                               Background="LightGray"/>
+                    <TextBlock FontSize="20" Text="Короткі Поперечки"/>
+                    <TextBlock Height="40" Width="200" Name="ShortAlongsOuptut"
+                               Background="LightGray"/>
+                    <TextBlock FontSize="20" Text="Щити"/>
+                    <TextBlock Height="40" Width="200" Name="ShieldsOuptut"
+                               Background="LightGray"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="150,0,10,0">
+                    <TextBlock FontSize="20" Text="Кв. м."/>
+                    <TextBlock Height="50" Width="120"
+                           Background="LightGray"/>
+                    <TextBlock FontSize="20" Text="Грн/день"/>
+                    <TextBlock Height="50" Width="120"
+                           Background="LightGray"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Viewbox>
 </Window>

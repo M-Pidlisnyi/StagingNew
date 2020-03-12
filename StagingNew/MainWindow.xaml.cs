@@ -24,5 +24,33 @@ namespace StagingNew
         {
             InitializeComponent();
         }
+
+
+      
+        private void StartInput(object sender, RoutedEventArgs e)
+        {
+            TextBox text_box = sender as TextBox;
+            if(text_box.Text == "Height of the wall" || text_box.Text == "Width of the wall")
+            {
+                text_box.Clear();
+            }
+            
+        }
+
+        private void ReWriteTooltip(object sender, RoutedEventArgs e)
+        {
+            TextBox text_box = sender as TextBox;
+            if (text_box.Text == "" || text_box.Text == " ")
+            {
+                if(text_box.Name == "WallHeightInput")
+                {
+                    text_box.Text = "Height of the wall";
+                }
+                else if(text_box.Name == "WallWidthInput")
+                {
+                    text_box.Text = "Width of the wall";
+                }
+            }
+        }
     }
 }
