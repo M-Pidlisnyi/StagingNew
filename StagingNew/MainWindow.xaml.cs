@@ -23,6 +23,7 @@ namespace StagingNew
         public MainWindow()
         {
             InitializeComponent();
+           
         }
 
 
@@ -51,6 +52,11 @@ namespace StagingNew
                     text_box.Text = "Width of the wall";
                 }
             }
+        }
+
+        private void CalculateClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

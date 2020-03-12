@@ -1,4 +1,4 @@
-﻿<Window x:Class="StagingNew.MainWindow"
+﻿<Window x:Class="StagingNew.MainWindow" Name="AllElements"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -33,32 +33,38 @@
                              Text="Width of the wall"
                              GotFocus="StartInput"
                              LostFocus="ReWriteTooltip"/>
+                    <Line Height="50"/>
+                    <Button Height="50" Width="200" 
+                            Content="Calculate" FontSize="25" FontFamily="Century Gothic"
+                            Click="CalculateClick"/>
+
+
                 </StackPanel>
             </Grid>
             <Grid Name="RightGrid" HorizontalAlignment="Right"
                   Width="400" Margin="0,30,0,0">
                 <StackPanel HorizontalAlignment="Left">
-                    <TextBlock FontSize="20" Text="Стойки"/>
+                    <TextBlock FontSize="20" Text="Стойки" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="StandsOuptut"
                                Background="LightGray"/>
-                    <TextBlock FontSize="20" Text="Поперечки"/>
+                    <TextBlock FontSize="20" Text="Поперечки" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="AlongsOuptut"
                                Background="LightGray"/>
-                    <TextBlock FontSize="20" Text="Короткі Стойки"/>
+                    <TextBlock FontSize="20" Text="Короткі Стойки" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="ShortStandsOuptut"
                                Background="LightGray"/>
-                    <TextBlock FontSize="20" Text="Короткі Поперечки"/>
+                    <TextBlock FontSize="20" Text="Короткі Поперечки" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="ShortAlongsOuptut"
                                Background="LightGray"/>
-                    <TextBlock FontSize="20" Text="Щити"/>
+                    <TextBlock FontSize="20" Text="Щити" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="ShieldsOuptut"
                                Background="LightGray"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Margin="150,0,10,0">
-                    <TextBlock FontSize="20" Text="Кв. м."/>
+                    <TextBlock FontSize="20" Text="Кв. м." FontFamily="Century Gothic"/>
                     <TextBlock Height="50" Width="120"
                            Background="LightGray"/>
-                    <TextBlock FontSize="20" Text="Грн/день"/>
+                    <TextBlock FontSize="20" Text="Грн/день" FontFamily="Century Gothic"/>
                     <TextBlock Height="50" Width="120"
                            Background="LightGray"/>
                 </StackPanel>
