@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StagingNew;
 
 namespace StagingNew
 {
@@ -20,12 +21,24 @@ namespace StagingNew
     /// </summary>
     public partial class MainWindow : Window
     {
+
+       
+
         public MainWindow()
         {
             InitializeComponent();
-           
         }
 
+        private  Dictionary<string, double> GetWallParameters()
+        {
+            var parameters = new Dictionary<string, double>(2)
+            {
+                ["wall_height"] = Convert.ToDouble(WallHeightInput.Text),
+                ["wall_width"] = Convert.ToDouble(WallWidthInput.Text)
+            };
+
+            return parameters;
+        }
 
       
         private void StartInput(object sender, RoutedEventArgs e)
@@ -56,7 +69,9 @@ namespace StagingNew
 
         private void CalculateClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Program program = new Program(GetWallParameters());
+            Staging result = program.Calculate();
+            
         }
     }
 }
