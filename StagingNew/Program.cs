@@ -19,15 +19,23 @@ namespace StagingNew
 
         }
 
-        public Staging Calculate()
+        public Dictionary<string,string> Proceed()
         {
 
             Staging staging = new Staging(wall_height, wall_width);
-            
-            
-            
 
-            return staging;
+            var result = new Dictionary<string, string>()
+            {
+                ["Stands"] = staging.Stands_num.ToString(),
+                ["Alongs"] = staging.Alongs_num.ToString(),
+                ["Short Stands"] = staging.Short_stands_num.ToString(),
+                ["Short Alongs"] = staging.Short_alongs_num.ToString(),
+                ["Shields"] = staging.Shields_num.ToString(),
+                ["Square Metres"] = staging.SquareMetres.ToString()
+
+            };
+           
+            return result;
         }
 
     }

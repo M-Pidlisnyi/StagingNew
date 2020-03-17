@@ -18,17 +18,20 @@
             <Grid Name="LefGrid" HorizontalAlignment="Left"
                   Width="400" Margin="0,30,0,0">
                 <StackPanel>
+                    <TextBlock Text="Висота стіни"
+                               FontSize="20" FontFamily="Century Gothic"/>
                     <TextBox Width="250" Height="40" Name="WallHeightInput"
                              HorizontalAlignment="Left"
-                             Background="LightGray"
+                             Background="#FFA8E6A8"
                              FontFamily="Century Gothic" FontSize="25" 
                              Text="Height of the wall"
                              GotFocus="StartInput"
                              LostFocus="ReWriteTooltip"/>
-                    <Line Height="5"/>
+                    <TextBlock Text="Ширина стіни"
+                               FontSize="20" FontFamily="CenturyGothic"/>
                     <TextBox Width="250" Height="40" Name="WallWidthInput"
                              HorizontalAlignment="Left"
-                             Background="LightGray"
+                             Background="#FFA8E6A8"
                              FontFamily="Century Gothic" FontSize="25" 
                              Text="Width of the wall"
                              GotFocus="StartInput"
@@ -44,29 +47,40 @@
             <Grid Name="RightGrid" HorizontalAlignment="Right"
                   Width="400" Margin="0,30,0,0">
                 <StackPanel HorizontalAlignment="Left">
-                    <TextBlock FontSize="20" Text="Стойки" FontFamily="Century Gothic"/>
+                    <TextBlock Text="Стойки"  FontSize="20" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="StandsOuptut"
+                               FontSize="20" FontFamily="Century Gothic"
                                Background="LightGray"/>
                     <TextBlock FontSize="20" Text="Поперечки" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="AlongsOuptut"
+                               FontSize="20" FontFamily="Century Gothic"
                                Background="LightGray"/>
                     <TextBlock FontSize="20" Text="Короткі Стойки" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="ShortStandsOuptut"
+                               FontSize="20" FontFamily="Century Gothic"
                                Background="LightGray"/>
                     <TextBlock FontSize="20" Text="Короткі Поперечки" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="ShortAlongsOuptut"
+                               FontSize="20" FontFamily="Century Gothic"
                                Background="LightGray"/>
                     <TextBlock FontSize="20" Text="Щити" FontFamily="Century Gothic"/>
                     <TextBlock Height="40" Width="200" Name="ShieldsOuptut"
+                               FontSize="20" FontFamily="Century Gothic"
                                Background="LightGray"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Margin="150,0,10,0">
                     <TextBlock FontSize="20" Text="Кв. м." FontFamily="Century Gothic"/>
-                    <TextBlock Height="50" Width="120"
-                           Background="LightGray"/>
+                    <TextBlock Height="50" Width="120" Name ="SquareMetresOutput"
+                               FontSize="20" FontFamily="Century Gothic"
+                               Background="LightGray"/>
+                    <TextBlock Text="Грн/кв.м." FontSize="20" FontFamily="Century Gothic"/>
+                    <TextBox Name="PriceInput" Background="#FFA8E6A8" Text="1"
+                             Height="50" Width="120" 
+                             FontSize="20" FontFamily="Century Gothic"/>
                     <TextBlock FontSize="20" Text="Грн/день" FontFamily="Century Gothic"/>
-                    <TextBlock Height="50" Width="120"
-                           Background="LightGray"/>
+                    <TextBlock Height="50" Width="120" Name="PriceOutput"
+                               FontSize="20" FontFamily="Century Gothic"
+                               Background="LightGray"/>
                 </StackPanel>
             </Grid>
         </Grid>

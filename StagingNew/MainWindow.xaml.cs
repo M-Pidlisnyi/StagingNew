@@ -75,12 +75,19 @@ namespace StagingNew
         private void CalculateClick(object sender, RoutedEventArgs e)
         {
             Program program = new Program(GetWallParameters());
-            Staging result = program.Calculate();
 
-            StandsOuptut.Text = result.Stands_num.ToString();
-            ShortStandsOuptut.Text = result.Short_stands_num.ToString();
-            AlongsOuptut.Text = result.Alongs_num.ToString();
-            ShortAlongsOuptut.Text = result.Short_alongs_num.ToString();
+            var result = program.Proceed();
+
+            StandsOuptut.Text = result["Stands"];
+            AlongsOuptut.Text = result["Alongs"];
+            ShortStandsOuptut.Text = result["Short Stands"];
+            ShortAlongsOuptut.Text = result["Short Alongs"];
+            ShieldsOuptut.Text = result["Shields"];
+            SquareMetresOutput.Text = result["Square Metres"];
+
+            double square_metres = Convert.ToDouble(SquareMetresOutput.Text);
+            double price_per_mq = Convert.ToDouble(PriceInput.Text);
+            PriceOutput.Text = (square_metres * price_per_mq).ToString();
         }
     }
 }

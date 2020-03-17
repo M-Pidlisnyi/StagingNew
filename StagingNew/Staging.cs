@@ -8,7 +8,6 @@ namespace StagingNew
 {
     class Staging
     {
-
         private double long_height = 0;
         private double long_width  = 0;
         private double short_height = 0;
@@ -22,12 +21,16 @@ namespace StagingNew
         public int Shields_num { get; private set; } = 0;
 
 
+        public double SquareMetres { get; private set; }
+
         public Staging(double wall_height, double wall_width)
         {
             CalculateHeight(wall_height);
             CalculateWidth(wall_width);
 
             CalculateElements();
+
+            CalcularteSquareMetres();
         }
         
 
@@ -69,6 +72,7 @@ namespace StagingNew
         {
             CalculateStands();
             CalculateAlongs();
+            CalculateShields();
         }
 
         private void CalculateStands()
@@ -98,6 +102,20 @@ namespace StagingNew
             Short_alongs_num += Stands_num;
             Short_alongs_num += Short_stands_num;
         }
+        
+        private void CalculateShields()
+        {
+            int long_sections = (int)(long_width / 3);
+            int short_sections = (int)(short_width / 1.2);
+            Shields_num += long_sections * 6 + short_sections * 2;
+        }
  
+
+        private void CalcularteSquareMetres()
+        {
+            double full_height = long_height + short_height;
+            double full_width = long_width + short_width;
+            SquareMetres = full_height * full_width;
+        }
     }
 }
