@@ -55,11 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Staging\Along.cs" />
-    <Compile Include="Staging\ShortAlong.cs" />
-    <Compile Include="Staging\ShortStand.cs" />
-    <Compile Include="Staging\StagingElement.cs" />
-    <Compile Include="Staging\StandElement.cs" />
+    <Compile Include="Staging.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +70,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

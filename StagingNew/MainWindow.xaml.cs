@@ -21,9 +21,6 @@ namespace StagingNew
     /// </summary>
     public partial class MainWindow : Window
     {
-
-       
-
         public MainWindow()
         {
             InitializeComponent();
@@ -31,12 +28,20 @@ namespace StagingNew
 
         private  Dictionary<string, double> GetWallParameters()
         {
-            var parameters = new Dictionary<string, double>(2)
-            {
-                ["wall_height"] = Convert.ToDouble(WallHeightInput.Text),
-                ["wall_width"] = Convert.ToDouble(WallWidthInput.Text)
-            };
 
+            var parameters = new Dictionary<string, double>(2);
+            try
+            {
+                parameters["wall_height"] = Convert.ToDouble(WallHeightInput.Text);
+                parameters["wall_width"] = Convert.ToDouble(WallWidthInput.Text);
+            }
+            catch(FormatException e)
+            {
+                WallHeightInput.Text = "Input needed";
+                WallWidthInput.Text  = "Input needed";
+                parameters["wall_height"] = 0;
+                parameters["wall_width"]  = 0;
+            }
             return parameters;
         }
 
@@ -71,7 +76,11 @@ namespace StagingNew
         {
             Program program = new Program(GetWallParameters());
             Staging result = program.Calculate();
-            
+
+            StandsOuptut.Text = result.Stands_num.ToString();
+            ShortStandsOuptut.Text = result.Short_stands_num.ToString();
+            AlongsOuptut.Text = result.Alongs_num.ToString();
+            ShortAlongsOuptut.Text = result.Short_alongs_num.ToString();
         }
     }
 }

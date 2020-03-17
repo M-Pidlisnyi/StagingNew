@@ -14,15 +14,21 @@ namespace StagingNew
 
         public Program(Dictionary<string, double> wall_parameters)
         {
-            this.wall_height = wall_parameters["wall_heigth"];
+            this.wall_height = wall_parameters["wall_height"];
             this.wall_width = wall_parameters["wall_width"];
 
         }
 
         public Staging Calculate()
         {
-            Staging result = new Staging();
-            return result;
+
+            Staging staging = new Staging(wall_height, wall_width);
+            
+            
+            
+
+            return staging;
         }
+
     }
 }
